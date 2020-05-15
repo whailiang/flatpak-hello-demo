@@ -1,0 +1,30 @@
+{
+    "app-id": "org.ubuntukylin.hello_qt",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.12",
+    "sdk": "org.kde.Sdk",
+    "command": "hello_qt",
+    "finish-args":[
+    "--socket=x11"
+    ],
+    "modules": [
+        {
+            "name": "hello_qt",
+            "no-autogen": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "path": "https://github.com/whailiang/flatpak-hello-demo.git",
+		    "branch":"master"
+                },
+		{
+                    "type":"script",
+                    "commands":[
+                        "sed -i 's|/usr|/app|g' hello_qt.pro",
+                        "qmake PREFIX=/app"
+                    ]
+                }
+            ]
+        }
+    ]
+}

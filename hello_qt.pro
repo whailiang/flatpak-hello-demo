@@ -38,7 +38,7 @@ isEmpty(PREFIX){
     PREFIX = /usr
 }
 
-target.path = $${PREFIX}/bin/
+target.path = $${PREFIX}/lib/
 
 
 INSTALLS += target
